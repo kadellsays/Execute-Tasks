@@ -56,6 +56,7 @@
                                             <constraint firstItem="I3L-We-3eM" firstAttribute="leading" secondItem="py5-Du-uqT" secondAttribute="leading" id="VU1-jd-MWa"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="titleLabel" destination="I3L-We-3eM" id="Srs-0I-PNf"/>
                                             <segue destination="q9l-fr-e5s" kind="show" identifier="fromCollectionCell" id="tvh-Y0-b2Q"/>
                                         </connections>
                                     </collectionViewCell>
@@ -81,10 +82,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="l5F-Ug-wP8" id="jaw-g3-2kH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="37.331334332833585"/>
+            <point key="canvasLocation" x="1014" y="36"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="I2r-Zm-gDD">
@@ -97,7 +101,33 @@
                     <view key="view" contentMode="scaleToFill" id="Vwv-BX-qdU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.43137254899999999" green="0.82745098039999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dee-a8-sAh">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VXd-Zp-Xgn"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JEX-QR-181">
+                                <rect key="frame" x="0.0" y="70" width="375" height="553"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="JEX-QR-181" firstAttribute="top" secondItem="Dee-a8-sAh" secondAttribute="bottom" id="AtO-Z8-mEI"/>
+                            <constraint firstAttribute="trailing" secondItem="Dee-a8-sAh" secondAttribute="trailing" id="Ed2-N7-JEC"/>
+                            <constraint firstAttribute="trailing" secondItem="JEX-QR-181" secondAttribute="trailing" id="PAm-ea-XPT"/>
+                            <constraint firstItem="Dee-a8-sAh" firstAttribute="leading" secondItem="Vwv-BX-qdU" secondAttribute="leading" id="Rsj-kj-yyz"/>
+                            <constraint firstItem="JEX-QR-181" firstAttribute="leading" secondItem="Vwv-BX-qdU" secondAttribute="leading" id="TDv-ax-1I6"/>
+                            <constraint firstItem="xQ4-1R-6BN" firstAttribute="top" secondItem="JEX-QR-181" secondAttribute="bottom" id="cUc-bm-c1x"/>
+                            <constraint firstItem="Dee-a8-sAh" firstAttribute="top" secondItem="fkN-Sd-wnB" secondAttribute="bottom" id="qBS-OU-21d"/>
+                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Done" id="BSJ-ie-DcZ">
@@ -108,10 +138,14 @@
                     </toolbarItems>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textLabel" destination="JEX-QR-181" id="JGd-py-JEY"/>
+                        <outlet property="titleLabel" destination="Dee-a8-sAh" id="gaI-db-feP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vs3-4u-4Mu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1911" y="36"/>
+            <point key="canvasLocation" x="1909.5999999999999" y="35.532233883058474"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XBg-33-SXa">

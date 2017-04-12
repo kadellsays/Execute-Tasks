@@ -9,8 +9,7 @@
 import UIKit
 
 class ToDoCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     
 }
