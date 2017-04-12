@@ -14,7 +14,7 @@
 		A2EECBE61E975CBF00285B4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2EECBE41E975CBF00285B4C /* LaunchScreen.storyboard */; };
 		A2EECBEF1E97CC5C00285B4C /* Ext-InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EECBEE1E97CC5C00285B4C /* Ext-InitialViewController.swift */; };
 		A2EECBF21E97CF5100285B4C /* ToDoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EECBF11E97CF5100285B4C /* ToDoCollectionViewCell.swift */; };
-		A2EECBF41E97D1A500285B4C /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EECBF31E97D1A500285B4C /* AddEditViewController.swift */; };
+		A2EECBF41E97D1A500285B4C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EECBF31E97D1A500285B4C /* AddViewController.swift */; };
 		A2FF9F3A1E9C7D0D000D5541 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FF9F391E9C7D0D000D5541 /* ColorScheme.swift */; };
 		A2FF9F3E1E9C8968000D5541 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FF9F3D1E9C8968000D5541 /* Notes.swift */; };
 		A2FF9F421E9D4921000D5541 /* Tasks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2FF9F401E9D4921000D5541 /* Tasks.xcdatamodeld */; };
@@ -30,7 +30,7 @@
 		A2EECBE71E975CBF00285B4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2EECBEE1E97CC5C00285B4C /* Ext-InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Ext-InitialViewController.swift"; path = "../Ext-InitialViewController.swift"; sourceTree = "<group>"; };
 		A2EECBF11E97CF5100285B4C /* ToDoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCollectionViewCell.swift; sourceTree = "<group>"; };
-		A2EECBF31E97D1A500285B4C /* AddEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
+		A2EECBF31E97D1A500285B4C /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		A2FF9F391E9C7D0D000D5541 /* ColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		A2FF9F3D1E9C8968000D5541 /* Notes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		A2FF9F411E9D4921000D5541 /* Tasks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tasks.xcdatamodel; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				A2EECBDD1E975CBF00285B4C /* InitialViewController.swift */,
-				A2EECBF31E97D1A500285B4C /* AddEditViewController.swift */,
+				A2EECBF31E97D1A500285B4C /* AddViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 			files = (
 				A2FF9F421E9D4921000D5541 /* Tasks.xcdatamodeld in Sources */,
 				A2FF9F3E1E9C8968000D5541 /* Notes.swift in Sources */,
-				A2EECBF41E97D1A500285B4C /* AddEditViewController.swift in Sources */,
+				A2EECBF41E97D1A500285B4C /* AddViewController.swift in Sources */,
 				A2EECBF21E97CF5100285B4C /* ToDoCollectionViewCell.swift in Sources */,
 				A2EECBEF1E97CC5C00285B4C /* Ext-InitialViewController.swift in Sources */,
 				A2EECBDE1E975CBF00285B4C /* InitialViewController.swift in Sources */,

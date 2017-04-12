@@ -9,13 +9,14 @@
 import UIKit
 import CoreData
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UITextFieldDelegate {
 
-    //MARK: -Outlets 
-    
+    //MARK: -Outlets
     @IBOutlet weak var titleLabel: UITextField!
     @IBOutlet weak var textLabel: UITextView!
     
+    
+    var resultText = ""
     
     var controller: NSFetchedResultsController<Notes>!
     
@@ -28,31 +29,30 @@ class AddViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isToolbarHidden = false
         self.edgesForExtendedLayout = []
-//        let note = Notes(context: context)
-//        note.title = titleLabel.text
-//        context.insert(<#T##object: NSManagedObject##NSManagedObject#>)
+        titleLabel.delegate = self
+       
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.titleLabel.text = resultText
+    }
+    
 
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
-        print("saved")
         let note = Notes(context: context)
-        note.title = titleLabel.text
-        note.body = textLabel.text
+        note.title = titleLabel?.text
+        note.body = textLabel?.text
         context.insert(note)
         try? context.save()
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
     }
-    */
+    
 
 }

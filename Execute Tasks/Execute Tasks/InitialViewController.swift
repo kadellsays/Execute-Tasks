@@ -13,9 +13,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     fileprivate let reuseIdentifier = "ToDoCell"
-    
+
     var controller: NSFetchedResultsController<Notes>!
     
     var context: NSManagedObjectContext {
@@ -26,16 +25,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Notes.title), ascending: true) ]
-//        
-
-//        controller.delegate = self
-//        try!controller.performFetch()
-        
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         navigationController?.isToolbarHidden = true
         request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Notes.title), ascending: true) ]
         controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -52,9 +46,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         if let sections = controller.sections {
             let info  = sections[section]
-            return info.numberOfObjects
+//            if info.numberOfObjects != 0 {
+                return info.numberOfObjects
+//            }
         }
         
         return 1
@@ -63,10 +60,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as!ToDoCollectionViewCell
-        
-        
+       
             let object = self.controller.object(at: indexPath)
             cell.titleLabel.text = object.title
+            cell.backgroundColor = Colors.babyBlue
             
         
         return cell
@@ -77,18 +74,36 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     //MARK: -CollectionView Delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //print(indexPath.row)
-        //self.present(AddViewController(), animated: true, completion: nil)
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let object = self.controller.object(at: indexPath)
    
+
+        
+        if let addEditVC = storyboard?.instantiateViewController(withIdentifier: "AddEditVC") as? AddViewController {
+            
+            print(object.title!)
+            if let title = object.title {
+                addEditVC.resultText = title
+                navigationController?.pushViewController(addEditVC, animated: true)
+            }
+        }
     }
+    
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         
     }
+    
+    
+    
+    //MARK: -Actions
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "AddEditVC") as? AddViewController {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     
 }
 

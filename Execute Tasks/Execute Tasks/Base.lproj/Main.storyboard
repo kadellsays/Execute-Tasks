@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Execute_Tasks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitialVC" id="BYZ-38-t0r" customClass="ViewController" customModule="Execute_Tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -57,7 +57,6 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="titleLabel" destination="I3L-We-3eM" id="Srs-0I-PNf"/>
-                                            <segue destination="q9l-fr-e5s" kind="show" identifier="fromCollectionCell" id="tvh-Y0-b2Q"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -78,7 +77,7 @@
                     <navigationItem key="navigationItem" id="Eee-W8-OAp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Klj-wP-4MH">
                             <connections>
-                                <segue destination="q9l-fr-e5s" kind="show" identifier="fromPlusButton" id="CN1-OL-hCM"/>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="a94-IX-EHP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -93,7 +92,7 @@
         <!--Add View Controller-->
         <scene sceneID="I2r-Zm-gDD">
             <objects>
-                <viewController id="q9l-fr-e5s" customClass="AddViewController" customModule="Execute_Tasks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddEditVC" id="q9l-fr-e5s" customClass="AddViewController" customModule="Execute_Tasks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fkN-Sd-wnB"/>
                         <viewControllerLayoutGuide type="bottom" id="xQ4-1R-6BN"/>
@@ -116,6 +115,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="q9l-fr-e5s" id="vVZ-G5-8Fv"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -140,12 +142,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="textLabel" destination="JEX-QR-181" id="JGd-py-JEY"/>
-                        <outlet property="titleLabel" destination="Dee-a8-sAh" id="gaI-db-feP"/>
+                        <outlet property="titleLabel" destination="Dee-a8-sAh" id="r2e-8W-vyZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vs3-4u-4Mu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909.5999999999999" y="35.532233883058474"/>
+            <point key="canvasLocation" x="1834" y="36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XBg-33-SXa">
@@ -170,7 +172,4 @@
             <point key="canvasLocation" x="55" y="37"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="CN1-OL-hCM"/>
-    </inferredMetricsTieBreakers>
 </document>
