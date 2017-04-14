@@ -79,15 +79,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
    
 
         
-        if let addEditVC = storyboard?.instantiateViewController(withIdentifier: "AddEditVC") as? AddViewController {
+        if let addEditVC = storyboard?.instantiateViewController(withIdentifier: "AddEditVC") as? AddEditViewController {
             
-            print(object.title!)
             if let title = object.title {
                 addEditVC.resultText = title
+                
+                addEditVC.currentlyEditing = true
+                addEditVC.currentNoteBeingEdited = object
+                
                 navigationController?.pushViewController(addEditVC, animated: true)
             }
         }
     }
+    
+    
     
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -99,7 +104,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     //MARK: -Actions
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "AddEditVC") as? AddViewController {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "AddEditVC") as? AddEditViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
     }

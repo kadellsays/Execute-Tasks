@@ -9,14 +9,17 @@
 import UIKit
 import CoreData
 
-class AddViewController: UIViewController, UITextFieldDelegate {
+class AddEditViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: -Outlets
     @IBOutlet weak var titleLabel: UITextField!
     @IBOutlet weak var textLabel: UITextView!
     
     
-    var resultText = ""
+    var resultText: String = ""
+    var summaryText: String = ""
+    var currentlyEditing: Bool = false
+    var currentNoteBeingEdited = Notes()
     
     var controller: NSFetchedResultsController<Notes>!
     
@@ -36,17 +39,24 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.titleLabel.text = resultText
+        self.textLabel.text = summaryText
     }
     
 
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+        if currentlyEditing {
+            currentNoteBeingEdited.title = titleLabel?.text
+            currentNoteBeingEdited.body = textLabel?.text
+            try? context.save()
+            
+        } else {
         let note = Notes(context: context)
         note.title = titleLabel?.text
         note.body = textLabel?.text
         context.insert(note)
         try? context.save()
-        
+        }
         self.navigationController?.popViewController(animated: true)
     }
     
