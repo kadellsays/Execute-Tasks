@@ -27,12 +27,15 @@ class AddEditViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         return appDelegate.persistentContainer.viewContext
     }
     
+     let imagePickerController = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isToolbarHidden = false
         self.edgesForExtendedLayout = []
         titleLabel.delegate = self
         textLabel.delegate = self
+        imagePickerController.delegate = self
        
     }
     
@@ -67,11 +70,10 @@ class AddEditViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     
     
     @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
-        let imagePickerController = UIImagePickerController()
         imagePickerController.allowsEditing = false
         imagePickerController.sourceType = .photoLibrary
-        imagePickerController.mediaTypes = [String(kUTTypeMovie), String(kUTTypeImage)]
-        imagePickerController.delegate = self
+        imagePickerController.mediaTypes = [String(kUTTypeImage)]
+//        imagePickerController.delegate = self
         self.present(imagePickerController, animated: true, completion: nil)
     }
     
