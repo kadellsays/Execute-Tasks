@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import AVFoundation
+import Photos
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
 
@@ -23,8 +25,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     let request: NSFetchRequest = Notes.fetchRequest()
    
+    let manager = PHImageManager.default()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Text"
+        self.collectionView.backgroundColor = Colors.lightGray
+        self.navigationController?.navigationBar.barTintColor = Colors.lightPurple
+        if let layout = collectionView?.collectionViewLayout as? CustomLayout {
+            layout.delegate = self
+        }
 
     }
     
@@ -80,17 +90,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
         
         if let addEditVC = storyboard?.instantiateViewController(withIdentifier: "AddEditVC") as? AddEditViewController {
-            
-            if let title = object.title {
-                addEditVC.resultText = title
                 
                 addEditVC.currentlyEditing = true
                 addEditVC.currentNoteBeingEdited = object
                 
                 navigationController?.pushViewController(addEditVC, animated: true)
             }
-        }
     }
+    
     
     
     
@@ -107,6 +114,47 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if let vc = storyboard?.instantiateViewController(withIdentifier: "AddEditVC") as? AddEditViewController {
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    func assignbackground(){
+        let background = UIImage(named: "background")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        collectionView.addSubview(imageView)
+        self.collectionView.sendSubview(toBack: imageView)
+    }
+    
+    
+}
+
+extension ViewController: LayoutDelegate {
+    
+    func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath: NSIndexPath,
+                        withWidth width: CGFloat) -> CGFloat {
+//        let photo = controller.sections?[indexPath.row].numberOfObjects
+////            photos[indexPath.item]
+//        let boundingRect =  CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+//        let rect  = AVMakeRectWithAspectRatioInsideRect(photo.image.size, boundingRect)
+        return 100
+//            rect.size.height
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView,
+                        heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
+//        let annotationPadding = CGFloat(4)
+//        let annotationHeaderHeight = CGFloat(17)
+//        let photo = controller.sections?[indexPath.row].numberOfObjects
+////            photos[indexPath.item]
+//        let font = UIFont(name: "AvenirNext-Regular", size: 10)!
+//        let commentHeight = photo.heightForComment(font, width: width)
+//        let height = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding
+        return 0
     }
     
     

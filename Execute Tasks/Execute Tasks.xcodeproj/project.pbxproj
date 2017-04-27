@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20559BE1EAEA50E000C08C9 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20559BD1EAEA50E000C08C9 /* CustomLayout.swift */; };
+		A270003C1EB287B50055966D /* VCEx-Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270003B1EB287B50055966D /* VCEx-Photos.swift */; };
 		A2EECBDC1E975CBF00285B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EECBDB1E975CBF00285B4C /* AppDelegate.swift */; };
 		A2EECBDE1E975CBF00285B4C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EECBDD1E975CBF00285B4C /* InitialViewController.swift */; };
 		A2EECBE11E975CBF00285B4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2EECBDF1E975CBF00285B4C /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A20559BD1EAEA50E000C08C9 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
+		A270003B1EB287B50055966D /* VCEx-Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VCEx-Photos.swift"; sourceTree = "<group>"; };
 		A2EECBD81E975CBF00285B4C /* Execute Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Execute Tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EECBDB1E975CBF00285B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2EECBDD1E975CBF00285B4C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A20559BF1EAEA513000C08C9 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				A20559BD1EAEA50E000C08C9 /* CustomLayout.swift */,
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
 		A2EECBCF1E975CBF00285B4C = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +81,7 @@
 				A2FF9F3B1E9C7FE2000D5541 /* UI Elements */,
 				A2EECBF01E97CC7600285B4C /* Extensions */,
 				A2EECBED1E975CFC00285B4C /* View Controllers */,
+				A20559BF1EAEA513000C08C9 /* Layouts */,
 				A2FF9F3C1E9C7FF5000D5541 /* View Cells */,
 				A2FF9F3F1E9C8975000D5541 /* Model */,
 				A2EECBDF1E975CBF00285B4C /* Main.storyboard */,
@@ -94,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				A2EECBEE1E97CC5C00285B4C /* Ext-InitialViewController.swift */,
+				A270003B1EB287B50055966D /* VCEx-Photos.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -154,6 +168,7 @@
 				TargetAttributes = {
 					A2EECBD71E975CBF00285B4C = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 2E9D85U478;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -194,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20559BE1EAEA50E000C08C9 /* CustomLayout.swift in Sources */,
 				A2FF9F421E9D4921000D5541 /* Tasks.xcdatamodeld in Sources */,
 				A2FF9F3E1E9C8968000D5541 /* Notes.swift in Sources */,
 				A2EECBF41E97D1A500285B4C /* AddEditViewController.swift in Sources */,
@@ -201,6 +217,7 @@
 				A2EECBEF1E97CC5C00285B4C /* Ext-InitialViewController.swift in Sources */,
 				A2EECBDE1E975CBF00285B4C /* InitialViewController.swift in Sources */,
 				A2FF9F3A1E9C7D0D000D5541 /* ColorScheme.swift in Sources */,
+				A270003C1EB287B50055966D /* VCEx-Photos.swift in Sources */,
 				A2EECBDC1E975CBF00285B4C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2E9D85U478;
 				INFOPLIST_FILE = "Execute Tasks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Example.Execute-Tasks";
@@ -338,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2E9D85U478;
 				INFOPLIST_FILE = "Execute Tasks/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Example.Execute-Tasks";

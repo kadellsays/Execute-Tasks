@@ -8,16 +8,15 @@
 
 import UIKit
 import CoreData
+import MobileCoreServices
 
-class AddEditViewController: UIViewController, UITextFieldDelegate {
+class AddEditViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     //MARK: -Outlets
     @IBOutlet weak var titleLabel: UITextField!
     @IBOutlet weak var textLabel: UITextView!
     
     
-    var resultText: String = ""
-    var summaryText: String = ""
     var currentlyEditing: Bool = false
     var currentNoteBeingEdited = Notes()
     
@@ -33,17 +32,23 @@ class AddEditViewController: UIViewController, UITextFieldDelegate {
         navigationController?.isToolbarHidden = false
         self.edgesForExtendedLayout = []
         titleLabel.delegate = self
+        textLabel.delegate = self
        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.titleLabel.text = resultText
-        self.textLabel.text = summaryText
+        if currentlyEditing {
+        self.titleLabel.text = currentNoteBeingEdited.title
+        self.textLabel.text = currentNoteBeingEdited.body!
+        }
+        
     }
-    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+    }
 
-    
+    //MARK: -Actions
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         if currentlyEditing {
             currentNoteBeingEdited.title = titleLabel?.text
@@ -60,8 +65,14 @@ class AddEditViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.resignFirstResponder()
+    
+    @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.allowsEditing = false
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.mediaTypes = [String(kUTTypeMovie), String(kUTTypeImage)]
+        imagePickerController.delegate = self
+        self.present(imagePickerController, animated: true, completion: nil)
     }
     
 
