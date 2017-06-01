@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A20559BE1EAEA50E000C08C9 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20559BD1EAEA50E000C08C9 /* CustomLayout.swift */; };
-		A270003C1EB287B50055966D /* VCEx-Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270003B1EB287B50055966D /* VCEx-Photos.swift */; };
+		A270003C1EB287B50055966D /* Ext-Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270003B1EB287B50055966D /* Ext-Photos.swift */; };
 		A2EECBDC1E975CBF00285B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EECBDB1E975CBF00285B4C /* AppDelegate.swift */; };
 		A2EECBDE1E975CBF00285B4C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EECBDD1E975CBF00285B4C /* InitialViewController.swift */; };
 		A2EECBE11E975CBF00285B4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2EECBDF1E975CBF00285B4C /* Main.storyboard */; };
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		A20559BD1EAEA50E000C08C9 /* CustomLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
-		A270003B1EB287B50055966D /* VCEx-Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VCEx-Photos.swift"; sourceTree = "<group>"; };
+		A270003B1EB287B50055966D /* Ext-Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ext-Photos.swift"; sourceTree = "<group>"; };
 		A2EECBD81E975CBF00285B4C /* Execute Tasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Execute Tasks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2EECBDB1E975CBF00285B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2EECBDD1E975CBF00285B4C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				A2EECBEE1E97CC5C00285B4C /* Ext-InitialViewController.swift */,
-				A270003B1EB287B50055966D /* VCEx-Photos.swift */,
+				A270003B1EB287B50055966D /* Ext-Photos.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 				A2EECBEF1E97CC5C00285B4C /* Ext-InitialViewController.swift in Sources */,
 				A2EECBDE1E975CBF00285B4C /* InitialViewController.swift in Sources */,
 				A2FF9F3A1E9C7D0D000D5541 /* ColorScheme.swift in Sources */,
-				A270003C1EB287B50055966D /* VCEx-Photos.swift in Sources */,
+				A270003C1EB287B50055966D /* Ext-Photos.swift in Sources */,
 				A2EECBDC1E975CBF00285B4C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

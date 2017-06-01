@@ -59,9 +59,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if let sections = controller.sections {
             let info  = sections[section]
-//            if info.numberOfObjects != 0 {
                 return info.numberOfObjects
-//            }
         }
         
         return 1
@@ -82,12 +80,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     
+    
     //MARK: -CollectionView Delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let object = self.controller.object(at: indexPath)
    
-
         
         if let addEditVC = storyboard?.instantiateViewController(withIdentifier: "AddEditVC") as? AddEditViewController {
                 

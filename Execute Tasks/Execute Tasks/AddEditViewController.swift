@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import MobileCoreServices
 
-class AddEditViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddEditViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate {
 
     //MARK: -Outlets
     @IBOutlet weak var titleLabel: UITextField!
@@ -18,7 +18,7 @@ class AddEditViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     
     
     var currentlyEditing: Bool = false
-    var currentNoteBeingEdited = Notes()
+    var currentNoteBeingEdited : Notes!
     
     var controller: NSFetchedResultsController<Notes>!
     
@@ -73,7 +73,6 @@ class AddEditViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         imagePickerController.allowsEditing = false
         imagePickerController.sourceType = .photoLibrary
         imagePickerController.mediaTypes = [String(kUTTypeImage)]
-//        imagePickerController.delegate = self
         self.present(imagePickerController, animated: true, completion: nil)
     }
     

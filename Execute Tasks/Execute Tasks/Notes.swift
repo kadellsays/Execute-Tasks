@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import CoreData
 
 extension Notes {
 
+    
+    
 }
